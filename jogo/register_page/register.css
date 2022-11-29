@@ -1,0 +1,89 @@
+@import url('https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@100&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
+
+/*
+font-family: 'Libre Franklin', sans-serif;
+font-family: 'DM Sans', sans-serif;
+font-family: 'Varela Round', sans-serif;
+
+*/
+
+*{
+    padding: 0 0 0 0;
+    margin: 0 0 0 0;
+}
+
+body{
+    height:100vh; width:100vw;
+    display: flex; flex-direction: column; justify-content: center; align-items: center;
+    /*temporário, apenas para visualização*/
+    background-color: rgb(209 210 221);
+}
+
+#container{
+    height:70%; width:35%;
+    border: px solid black;
+}
+
+#register_logo{
+    display:flex; justify-content: center; align-items: center;
+    height: 20%; width:100%;
+    
+    background-color: rgb(84 203 189);
+}
+
+#register_logo_h1{
+    display:flex; justify-content: center; align-items: center;
+    font-family: 'Varela Round', sans-serif;
+    font-size:52px;
+    color:aliceblue;
+
+}
+
+#register_form{
+    height:70%; width:100%;
+    background-color: #dddddd;
+
+}
+
+.register_form_section{
+    height:25%; width:100%;
+    display: flex; flex-direction: column; justify-content: center; align-items: center;
+}
+
+.register_form_section label{
+    font-family: 'Libre Franklin', sans-serif;
+    font-size:32px; font-weight: bold;
+}
+
+.register_form_section input{
+    padding: 0 0 0 10px;
+    height:36px; width:80%;
+    outline:none;
+    border:none;
+}
+
+.register_form_section input:focus{
+    /*box-shadow: horizontal vertical blur cor*/
+    border-bottom:  aquamarine solid 2px;
+    box-shadow: 0px 1px 6px #969696;
+}
+
+.register_button_section{
+    height:25%; width:100%;
+    display:flex; justify-content: center; align-items: center;
+}
+
+#btnRegister{
+    font-size:18px; font-family: 'Varela Round', sans-serif;
+    background-color: aquamarine;
+    height:48px; width:80%;
+    border: none;
+}
+
+#btnRegister:hover{
+    background-color: #5eebbc;
+    box-shadow: rgba(0, 0, 0, 0.15) 2px 2px 3px;
+}
+
