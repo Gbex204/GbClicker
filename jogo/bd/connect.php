@@ -1,10 +1,10 @@
 <?php
-    $host = 'localhost:3306';
-    $user = 'desenvolvedor';
-    $pass = 'senha@senha';
-    $db = 'gbclicker';
+    $hostBD = 'localhost:3306';
+    $usuarioBD = 'desenvolvedor';
+    $senhaBD = 'senha@senha';
+    $bd = 'gbclicker';
     //CONEXÃO COM BANCO DE DADOS
-    $conn = mysqli_connect($host, $user, $pass, $db);
+    $conn = mysqli_connect($hostBD, $usuarioBD, $senhaBD, $bd);
 
     if(!$conn){
         echo"Falha ao se conectar no banco de dados!";
