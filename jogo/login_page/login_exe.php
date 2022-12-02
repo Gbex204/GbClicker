@@ -9,19 +9,19 @@
         $senha_inputada = $_POST['login_input_password'];
 
         $sql = "SELECT * FROM user WHERE user_email = '$email_inputado' and user_password = '$senha_inputada'";
-        $result = mysqli_query($conn, $sql);
-        $resultArray = mysqli_fetch_assoc($result);
+        $result = $conn->query($sql);
+        $result = $result->fetch_assoc();
 
-        if( ($resultArray !== NULL) && ($resultArray['user_email'] == $email_inputado) && ($resultArray['user_password'] == $senha_inputada) ){
+        if( ($result !== NULL) && ($result['user_email'] == $email_inputado) && ($result['user_password'] == $senha_inputada) ){
 
             //CRIANDO SESSÃO PARA LEVAR OS DADOS DA CONTA CONECTADA PARA OUTRAS PÁGINAS
             session_start();
-            $_SESSION['logged_email'] = $login_email;
-            $_SESSION['logged_money'] = $resultArray['user_money'];
-            $_SESSION['logged_multiplier'] = $resultArray['user_multiplier'];
-            $_SESSION['logged_username'] = $resultArray['user_username'];
-            $_SESSION['logged_1multprice'] = $resultArray['user_1multprice'];
-            $_SESSION['logged_10multprice'] = $resultArray['user_10multprice'];
+            $_SESSION['logged_email'] = $email_inputado;
+            $_SESSION['logged_money'] = $result['user_money'];
+            $_SESSION['logged_multiplier'] = $result['user_multiplier'];
+            $_SESSION['logged_username'] = $result['user_username'];
+            $_SESSION['logged_1multprice'] = $result['user_1multprice'];
+            $_SESSION['logged_10multprice'] = $result['user_10multprice'];
             
             //REDIRECIONAMENTO DO USUÁRIO PARA O SITE COM OS DADOS JÁ CONECTADOS
             header('location: ../home_page/site.php');

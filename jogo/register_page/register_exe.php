@@ -16,10 +16,10 @@
         //COLOCANDO NO BANCO DE DADOS O COMANDO DEFINIDO NO '$sql'
         $result = mysqli_query($conn, $sql);
 
-        header('location: ../php/login.php');
+        header('location: ../login_page/login.php');
     }
     else{
-        header('location: ../php/register.php');
+        header('location: register.php');
     }
 
     

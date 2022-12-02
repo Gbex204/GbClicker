@@ -1,14 +1,20 @@
 <?php
+    require "../bd/connect.php";
+
     session_start();
     //VERIFICAR SE A SESSÃO FOI INICIADA
     if(!isset($_SESSION['logged_username'])){
         header('location: login.php');
     }
 
-    $logged_money = $_SESSION['logged_money'];
-    $logged_multiplier = $_SESSION['logged_multiplier'];
-    $logged_1multprice = $_SESSION['logged_1multprice'];
-    $logged_10multprice = $_SESSION['logged_10multprice'];
+    $sql = "SELECT * FROM user WHERE user_email = '" . $_SESSION['logged_email'] . "'";
+    $result = $conn->query($sql);
+    $result = $result->fetch_assoc();
+
+    $logged_money = $result['user_money'];
+    $logged_multiplier = $result['user_multiplier'];
+    $logged_1multprice = $result['user_1multprice'];
+    $logged_10multprice = $result['user_10multprice'];
 ?>
 
 <!DOCTYPE html>
@@ -33,22 +39,24 @@
 
     <div id='outer_clicker_div'>
         <div id= 'img_div'>
-            <img onclick= 'add_money()' id= 'clicker_img' src='../midia/gb.png'>
+            <img onclick= 'add_money()' id= 'clicker_img' src='midia/gb.png'>
         </div>
     </div>
 
     <div id='shop_div'>
         <div id= 'shop_above'>
-            <button id= 'btn_1multiplier' onclick= 'buy_multiplier(50)' class= 'item'>+ 1x Multiplicador (R$50)</button>
-            <button id= 'btn_10multiplier' onclick= 'buy_10multiplier(700)' class= 'item'>+ 10x Multiplicador (R$700)</button>
+            <div id= 'shop_above_left'>
+                <button id= 'btn_1multiplier' onclick= 'buy_multiplier(50)' class= 'item'>+ 1x Multiplicador (R$50)</button>
+            </div>
+            <div id= 'shop_above_right'>
+                <button id= 'btn_10multiplier' onclick= 'buy_10multiplier(700)' class= 'item'>+ 10x Multiplicador (R$700)</button>
+            </div>
         </div>
         <div id= 'shop_under'>
-            <button class= 'item'>+ 1</button>
-            <button class= 'item'>+ 1 </button>
+            <button class= 'item'>Em breve...</button>
+            <button class= 'item'>Em breve...</button>
         </div>
-    </div>
-    
-    <div id= 'invisible_div' class= 'form_invisible'>
+        <div id= 'invisible_div'> </div>
     </div>
 
 <script type= 'text/javascript' language= 'javascript'>
@@ -68,8 +76,10 @@
     //ESPECIFICANDO ONDE SERÁ MOSTRADO O DINHEIRO, MULTIPLICADOR E ADICIONAIS DO USUÁRIO
     var showUserMoney = document.getElementById("show_money");
     var showUserMultiplier = document.getElementById("show_multiplier");
-    var btnMult1price = document.getElementById("btn_1multiplier");
-    var btnMult10price = document.getElementById("btn_10multiplier");
+    var btnMult1price = document.getElementById("shop_above_left");
+    var btnMult10price = document.getElementById("shop_above_right");
+    var botaoMult1price = document.getElementById("btn_1multiplier");
+    var botaoMult10price = document.getElementById("btn_10multiplier");
 
 
     
@@ -87,8 +97,8 @@
     }
 
     function update_price(){
-        btnMult1price.innerText = `+ 1x Multiplicador (R$${user_1multprice})`;
-        btnMult10price.innerText = `+ 10x Multiplicador (R$${user_10multprice})`;
+        botaoMult1price.innerText = `+ 1x Multiplicador (R$${user_1multprice})`;
+        botaoMult10price.innerText = `+ 10x Multiplicador (R$${user_10multprice})`;
 
         return;
     }
@@ -105,7 +115,7 @@
         let div = document.getElementById('invisible_div');
 
         // SÃO SALVOS OS SEGUINTES DADOS: (DINHEIRO, MULTIPLICADOR ATUAL, PREÇO DE COMPRA DE 1 MULTIPLICADOR E DE 10 MULTIPLICADORES)
-        div.innerHTML += `<form id= 'save_form' method= 'POST' action= '../bd/site_exe.php' style= 'visibility: hidden;'>
+        div.innerHTML += `<form id= 'save_form' method= 'POST' action= 'site_exe.php' style= 'visibility: hidden;'>
         \n<input name= 'save_input_money' type= 'text' value= "${user_money}" style= 'visibility: hidden;'>
         \n<input name= 'save_input_multiplier' type= 'text' value= "${user_multiplier}" style= 'visibility: hidden;'>
         \n<input name= 'save_input_1multprice' type= 'text' value= "${user_1multprice}" style= 'visibility: hidden;'>
@@ -125,7 +135,7 @@
             update_money(user_money);
             change_1multiplier_price(price);
 
-            return;
+            return save_changes();
         }
         else{
             alert('Pouco dinheiro!');
@@ -142,7 +152,7 @@
             update_money(user_money);
             change_10multiplier_price(price);
             
-            return;
+            return save_changes();
         }
         else{
             alert('Pouco dinheiro!')
@@ -152,21 +162,21 @@
 
     // FUNÇOES UTILIZADAAS PARA TROCAR O VALOR QUE O JOGADOR IRÁ PAGAR POR CADA ITEM E O TEXTO NA PÁGINA
     function change_1multiplier_price(price){
-        let newPrice = price + (price/2);
+        let newPrice = (price + (price/2));
 
         btnMult1price.innerHTML = `<button id= 'btn_1multiplier' onclick= 'buy_multiplier(${newPrice})' class= 'item'>+ 1x Multiplicador (R$${newPrice})</button>`;
 
-        
-        return; //save_changes();
+        user_1multprice = newPrice;
+        return;
     }
 
     function change_10multiplier_price(price){
-        let newPrice = price + (price*0.5);
+        let newPrice = (price + (price*0.5));
 
         btnMult10price.innerHTML = `<button id= 'btn_10multiplier' onclick= 'buy_10multiplier(${newPrice})' class= 'item'>+ 10x Multiplicador (R$${newPrice})</button>`;
 
-        
-        return; //save_changes();
+        user_10multprice = newPrice;
+        return;
     }
 
     
