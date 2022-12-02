@@ -4,9 +4,9 @@
     $senhaBD = 'senha@senha';
     $bd = 'gbclicker';
     //CONEXÃO COM BANCO DE DADOS
-    $conn = mysqli_connect($hostBD, $usuarioBD, $senhaBD, $bd);
+    $conn = new mysqli($hostBD, $usuarioBD, $senhaBD, $bd);
 
-    if(!$conn){
+    if($conn->connect_error){
         echo"Falha ao se conectar no banco de dados!";
     }
 

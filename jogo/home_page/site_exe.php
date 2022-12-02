@@ -1,5 +1,5 @@
 <?php
-    require 'connect.php';
+    require '../bd/connect.php';
     //VERIFICAÇÃO SE OS DADOS MULTIPLIER E MONEY FORAM PASSADOS
     if( isset($_POST['save_input_money']) && isset($_POST['save_input_multiplier']) && isset($_POST['save_input_1multprice']) && isset($_POST['save_input_10multprice']) ){
 
@@ -24,12 +24,12 @@
         user_1multprice = '$save_current_1multprice',
         user_10multprice = '$save_current_10multprice' WHERE user_email = '$logged_email'";
         
-        $result = mysqli_query($conn, $sql);
+        $conn->query($sql);
 
         header('location: site.php');
     }
     else{
-        header('location: login.php');
+        header('location: login.php?erro=3');
     }
 
 ?>

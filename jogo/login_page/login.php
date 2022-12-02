@@ -35,6 +35,11 @@
                 echo "<script language='JavaScript'>alert('Inputs vazios! Tente novamente...')</script>";
             }
         }
+        else if(isset($_GET['erro'])){
+            if($_GET['erro'] == 3){
+                echo "<script language='JavaScript'>alert('ERRO FATAL AO SALVAR!')</script>";
+            }
+        }
     ?>
 </body>
 </html>

@@ -51,21 +51,21 @@ body {
 
 #outer_clicker_div {
     display:flex; flex-direction: column; align-items: center;
-    height:40%; width:100%;
+    height:60%; width:100%;
 }
 
 #img_div{
-    display: flex; flex-direction: column; align-items: center;
+    display:flex; flex-direction: column; align-items: center; justify-content: center;
     height:100%; width:20%;
 }
 
 #clicker_img{
-    height:100%; width: 100%;
+    height:60%; width: 85%;
 }
 
 #shop_div{
     display:flex; justify-content: center; align-items: center; flex-direction: column;
-    height: 20%; width:100%;
+    height: 30%; width:100%;
     background-color: rgb(76, 173, 162);
 }
 
