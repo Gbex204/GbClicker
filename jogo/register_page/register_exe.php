@@ -11,7 +11,7 @@
         $register_username = $_POST['register_input_username'];
 
         //DEFININDO COMANDO SQL PARA O PHP MANDAR PRO BANCO DE DADOS OS DADOS INFORMADOS
-        $sql = "INSERT INTO user (user_email, user_password, user_username, user_money, user_multiplier, user_1multprice, user_10multprice) VALUES ('$register_email', '$register_password', '$register_username', '0', '1', '50', '700')";
+        $sql = "INSERT INTO user (user_email, user_password, user_username, user_money, user_multiplier, user_gbminions, user_1multprice, user_10multprice, user_gbminionprice) VALUES ('$register_email', '$register_password', '$register_username', '0', '1', '0', '50', '700', '100')";
 
         //COLOCANDO NO BANCO DE DADOS O COMANDO DEFINIDO NO '$sql'
         $result = mysqli_query($conn, $sql);

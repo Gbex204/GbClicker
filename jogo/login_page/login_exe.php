@@ -22,6 +22,8 @@
             $_SESSION['logged_username'] = $result['user_username'];
             $_SESSION['logged_1multprice'] = $result['user_1multprice'];
             $_SESSION['logged_10multprice'] = $result['user_10multprice'];
+            $_SESSION['logged_gbminionprice'] = $result['user_gbminionprice'];
+            $_SESSION['logged_gbminions'] = $result['user_gbminions'];
             
             //REDIRECIONAMENTO DO USUÁRIO PARA O SITE COM OS DADOS JÁ CONECTADOS
             header('location: ../home_page/site.php');
