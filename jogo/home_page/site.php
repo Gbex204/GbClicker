@@ -45,16 +45,20 @@
 
     <div id='shop_div'>
         <div id= 'shop_above'>
-            <div id= 'shop_above_left'>
+            <div id= 'shop_above_left' class= 'shop_row'>
                 <button id= 'btn_1multiplier' onclick= 'buy_multiplier(<?php echo $logged_1multprice ?>)' class= 'item'>+ 1x Multiplicador (R$<?php echo $logged_1multprice ?>)</button>
             </div>
-            <div id= 'shop_above_right'>
+            <div id= 'shop_above_right' class= 'shop_row'>
                 <button id= 'btn_10multiplier' onclick= 'buy_10multiplier(<?php echo $logged_10multprice ?>)' class= 'item'>+ 10x Multiplicador (R$<?php echo $logged_10multprice ?>)</button>
             </div>
         </div>
         <div id= 'shop_under'>
-            <button class= 'item'>Em breve...</button>
-            <button class= 'item'>Em breve...</button>
+            <div id= 'shop_under_left' class= 'shop_row'>
+                <button class= 'item'>Em breve...</button>
+            </div>
+            <div id= 'shop_under_right' class= 'shop_row'>
+                <button class= 'item'>Em breve...</button>
+            </div>
         </div>
         <div id= 'invisible_div'> </div>
     </div>
