@@ -4,7 +4,7 @@
     session_start();
     //VERIFICAR SE A SESSÃO FOI INICIADA
     if(!isset($_SESSION['logged_username'])){
-        header('location: login.php');
+        header('location: ../login_page/login.php');
     }
 
     $sql = "SELECT * FROM user WHERE user_email = '" . $_SESSION['logged_email'] . "'";
@@ -24,7 +24,7 @@
     <link rel="stylesheet" href="site.css">
     <title>GbClicker | Site</title>
 </head>
-<body onload= 'update_price()'>
+<body onload= 'update_price()'> <!-- A página terá seus preços atualizados com os dados do usuário. -->
 
     <div id= 'header_div'>
         <div id= 'head_logo'>
@@ -32,8 +32,8 @@
         </div>
         <div id= 'info_div'>
             <?php echo "<h1 class= 'infos'>Username: " . $_SESSION['logged_username'] . "</h1>"; ?>
-            <?php echo "<h1 id= 'show_money' class= 'infos'>Money: " . $_SESSION['logged_money'] . "</h1>"; ?>
-            <?php echo "<h1 id= 'show_multiplier' class= 'infos'>Multiplier: " . $_SESSION['logged_multiplier'] . "x</h1>"; ?>
+            <?php echo "<h1 id= 'show_money' class= 'infos'>Money: " . $_SESSION['logged_money'] . "</h1>"; ?> <!-- A troca de valor do dinheiro será feita pelo javascript. -->
+            <?php echo "<h1 id= 'show_multiplier' class= 'infos'>Multiplier: " . $_SESSION['logged_multiplier'] . "x</h1>"; ?> <!-- A troca de valor do dinheiro será feita pelo javascript. -->
         </div>
     </div>
 
@@ -46,10 +46,10 @@
     <div id='shop_div'>
         <div id= 'shop_above'>
             <div id= 'shop_above_left'>
-                <button id= 'btn_1multiplier' onclick= 'buy_multiplier(50)' class= 'item'>+ 1x Multiplicador (R$50)</button>
+                <button id= 'btn_1multiplier' onclick= 'buy_multiplier(<?php echo $logged_1multprice ?>)' class= 'item'>+ 1x Multiplicador (R$<?php echo $logged_1multprice ?>)</button>
             </div>
             <div id= 'shop_above_right'>
-                <button id= 'btn_10multiplier' onclick= 'buy_10multiplier(700)' class= 'item'>+ 10x Multiplicador (R$700)</button>
+                <button id= 'btn_10multiplier' onclick= 'buy_10multiplier(<?php echo $logged_10multprice ?>)' class= 'item'>+ 10x Multiplicador (R$<?php echo $logged_10multprice ?>)</button>
             </div>
         </div>
         <div id= 'shop_under'>
@@ -162,7 +162,7 @@
 
     // FUNÇOES UTILIZADAAS PARA TROCAR O VALOR QUE O JOGADOR IRÁ PAGAR POR CADA ITEM E O TEXTO NA PÁGINA
     function change_1multiplier_price(price){
-        let newPrice = (price + (price/2));
+        let newPrice = parseInt((price + (price/2)), 10);
 
         btnMult1price.innerHTML = `<button id= 'btn_1multiplier' onclick= 'buy_multiplier(${newPrice})' class= 'item'>+ 1x Multiplicador (R$${newPrice})</button>`;
 
@@ -171,7 +171,7 @@
     }
 
     function change_10multiplier_price(price){
-        let newPrice = (price + (price*0.5));
+        let newPrice = parseInt(price + (price*0.5), 10);
 
         btnMult10price.innerHTML = `<button id= 'btn_10multiplier' onclick= 'buy_10multiplier(${newPrice})' class= 'item'>+ 10x Multiplicador (R$${newPrice})</button>`;
 
