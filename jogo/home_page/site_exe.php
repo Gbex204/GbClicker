@@ -10,19 +10,25 @@
         $save_current_multiplier = $_POST['save_input_multiplier'];
         $save_current_1multprice = $_POST['save_input_1multprice'];
         $save_current_10multprice = $_POST['save_input_10multprice'];
+        $save_current_gbminionprice = $_POST['save_input_gbminionprice'];
+        $save_current_gbminions = $_POST['save_input_gbminions'];
 
         //QUANDO RETORNAR AO SITE.PHP, O USUÁRIO TERÁ O DINHEIRO E MULTIPLICADOR ATUALIZADOS
         $_SESSION['logged_money'] = $_POST['save_input_money'];
         $_SESSION['logged_multiplier'] = $_POST['save_input_multiplier'];
         $_SESSION['logged_1multprice'] = $_POST['save_input_1multprice'];
         $_SESSION['logged_10multprice'] = $_POST['save_input_10multprice'];
+        $_SESSION['logged_gbminionprice'] = $_POST['save_input_gbminionprice'];
+        $_SESSION['logged_gbminions'] = $_POST['save_input_gbminions'];
 
         //ATUALIZANDO O DINHEIRO DO CADASTRO LOGADO NO SITE
         $sql = "UPDATE user SET 
         user_money = '$save_current_money',
         user_multiplier = '$save_current_multiplier',
         user_1multprice = '$save_current_1multprice',
-        user_10multprice = '$save_current_10multprice' WHERE user_email = '$logged_email'";
+        user_10multprice = '$save_current_10multprice',
+        user_gbminionprice = '$save_current_gbminionprice',
+        user_gbminions = '$save_current_gbminions' WHERE user_email = '$logged_email'";
         
         $conn->query($sql);
 
