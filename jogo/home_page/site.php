@@ -41,7 +41,7 @@
                 <button id= 'btn_1gbminion' class= 'item' onclick= 'buy_1gbminion(<?php echo $logged_gbminionprice ?>)'>+ 1x Gb Minion</button>
             </div>
             <div id= 'shop_under_right' class= 'shop_row'>
-                <button class= 'item'>Em breve...</button>
+                <button class= 'item' onclick= 'gotoShop()'>Ir para a loja</button>
             </div>
         </div>
         <div id= 'invisible_div'> </div>

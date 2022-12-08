@@ -1,0 +1,81 @@
+@import url('https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@100&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
+
+/*
+font-family: 'Libre Franklin', sans-serif;
+font-family: 'DM Sans', sans-serif;
+font-family: 'Varela Round', sans-serif;
+
+*/
+
+*{
+    margin: 0 0 0 0;
+    padding: 0 0 0 0;
+}
+
+body {
+    height:150vh; width:100vw;
+}
+
+/* Nav CSS */
+
+#header_div{
+    height:10%; width:100%;
+    display:flex; flex-direction: row;
+    background-color: rgb(84 203 189);
+}
+
+#head_logo{
+    height:100%; width: 83%;
+}
+
+#head_logo h1{
+    margin: 0 0 0 15px;
+    display:flex; align-content: center;
+    font-family: 'Varela Round', sans-serif;
+    font-size:4vw;
+    color:aliceblue;
+}
+
+#info_div{
+    padding: 0 0 0 3%;
+    height:100%; width:17%;
+    display:flex; flex-direction: column; justify-content: right;
+    background-color: rgb(76, 173, 162);
+}
+
+.infos{
+    color:  aliceblue;
+    font-size: 18px; font-family: 'Libre Franklin', sans-serif;
+}
+
+/* Loja CSS */
+
+#loja_div{
+    height:90%; width:100%;
+    display:flex; justify-content: center; align-items: center; flex-direction: column;
+    background-color: rgb(209 210 221);
+}
+
+table{
+    height:75%;
+    width:50%;
+}
+
+th{
+    font-family: 'Varela Round', sans-serif;
+    font-size:3vw;
+    background-color: rgb(84 203 189);
+    height:20%;
+}
+
+tr{
+    background-color: rgb(76, 173, 162);
+    height:20%;
+    width:100%;
+}
+
+td{
+    border-radius: 5px;
+}

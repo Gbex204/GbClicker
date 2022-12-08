@@ -1,5 +1,7 @@
 <script type= 'text/javascript' language= 'javascript'>
     //PEGANDO VALORES DO PHP E TRAZENDO PARA O JS
+    var site_link = 'http://localhost'; 
+
     var user_money = '<?php  echo"$logged_money"?>';
     var user_multiplier = '<?php  echo"$logged_multiplier"?>';
     var user_1multprice = '<?php  echo"$logged_1multprice"?>';
@@ -191,5 +193,10 @@
           }
         }
         return (num / si[i].value).toFixed(digits).replace(rx, "$1") + si[i].symbol;
+    }
+
+    function gotoShop(){
+        let shop_link = site_link + '/GbClicker/jogo/home_page/shop/shop.php'
+        window.location = shop_link;
     }
 </script>

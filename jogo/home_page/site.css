@@ -33,7 +33,7 @@ body {
     margin: 0 0 0 15px;
     display:flex; align-content: center;
     font-family: 'Varela Round', sans-serif;
-    font-size:52px;
+    font-size:4vw;
     color:aliceblue;
 }
 
@@ -109,7 +109,7 @@ body {
         margin: 0 0 0 15px;
         display:flex; align-content: center;
         font-family: 'Varela Round', sans-serif;
-        font-size:200%;
+        font-size:3vw;
         color:aliceblue;
     }
 
@@ -135,7 +135,7 @@ body {
         margin: 0 0 0 15px;
         display:flex; align-content: center;
         font-family: 'Varela Round', sans-serif;
-        font-size:200%;
+        font-size:3vw;
         color:aliceblue;
     }
 
