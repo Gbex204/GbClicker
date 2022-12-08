@@ -22,13 +22,13 @@
         $_SESSION['logged_gbminions'] = $_POST['save_input_gbminions'];
 
         //ATUALIZANDO O DINHEIRO DO CADASTRO LOGADO NO SITE
-        $sql = "UPDATE user SET 
+        $sql = "UPDATE user, multiplier SET 
         user_money = '$save_current_money',
-        user_multiplier = '$save_current_multiplier',
-        user_1multprice = '$save_current_1multprice',
-        user_10multprice = '$save_current_10multprice',
+        multiplier = '$save_current_multiplier',
+        multiplierPrice = '$save_current_1multprice',
+        10multiplierPrice = '$save_current_10multprice',
         user_gbminionprice = '$save_current_gbminionprice',
-        user_gbminions = '$save_current_gbminions' WHERE user_email = '$logged_email'";
+        user_gbminions = '$save_current_gbminions' WHERE user_email = '$logged_email' and FK_user_email = '$logged_email'";
         
         $conn->query($sql);
 

@@ -40,6 +40,11 @@
                 echo "<script language='JavaScript'>alert('ERRO FATAL AO SALVAR!')</script>";
             }
         }
+        else if(isset($_GET['registrado'])){
+            if($_GET['registrado'] == 'true'){
+                echo "<script language='JavaScript'>alert('Registrado com Sucesso!')</script>";
+            }
+        }
     ?>
 </body>
 </html>

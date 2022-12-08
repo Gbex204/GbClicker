@@ -23,7 +23,7 @@
 
     <div id='outer_clicker_div'>
         <div id= 'img_div'>
-            <img onclick= 'add_money()' id= 'clicker_img' src='midia/gb.png'>
+            <a onclick= 'add_money()' id= 'clicker_img' style=' background: url("midia/gb.png") no-repeat scroll 0 0 transparent; cursor: pointer;'></a>
         </div>
     </div>
 

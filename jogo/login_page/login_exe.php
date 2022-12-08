@@ -8,7 +8,7 @@
         $email_inputado = $_POST['login_input_email'];
         $senha_inputada = $_POST['login_input_password'];
 
-        $sql = "SELECT * FROM user WHERE user_email = '$email_inputado' and user_password = '$senha_inputada'";
+        $sql = "SELECT * FROM user, multiplier WHERE user_email = '$email_inputado' and multiplier.FK_user_email = '$email_inputado' and user_password = '$senha_inputada'";
         $result = $conn->query($sql);
         $result = $result->fetch_assoc();
 
@@ -18,10 +18,10 @@
             session_start();
             $_SESSION['logged_email'] = $email_inputado;
             $_SESSION['logged_money'] = $result['user_money'];
-            $_SESSION['logged_multiplier'] = $result['user_multiplier'];
+            $_SESSION['logged_multiplier'] = $result['multiplier'];
             $_SESSION['logged_username'] = $result['user_username'];
-            $_SESSION['logged_1multprice'] = $result['user_1multprice'];
-            $_SESSION['logged_10multprice'] = $result['user_10multprice'];
+            $_SESSION['logged_1multprice'] = $result['multiplierPrice'];
+            $_SESSION['logged_10multprice'] = $result['10multiplierPrice'];
             $_SESSION['logged_gbminionprice'] = $result['user_gbminionprice'];
             $_SESSION['logged_gbminions'] = $result['user_gbminions'];
             
