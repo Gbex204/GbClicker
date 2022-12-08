@@ -30,7 +30,7 @@
 
     <div id= 'header_div'>
         <div id= 'head_logo'>
-            <h1>GB CLICKER</h1>
+            <h1 id= 'head_logo_text'>GB CLICKER</h1>
         </div>
         <div id= 'info_div'>
             <?php echo "<h1 class= 'infos'>Username: " . $_SESSION['logged_username'] . "</h1>"; ?>
@@ -57,7 +57,7 @@
         </div>
         <div id= 'shop_under'>
             <div id= 'shop_under_left' class= 'shop_row'>
-                <button id= 'btn_1gbminion' class= 'item' onclick= 'buy_1gbminion(<?php echo $logged_gbminions ?>)'>+ 1x Gb Minion</button>
+                <button id= 'btn_1gbminion' class= 'item' onclick= 'buy_1gbminion(<?php echo $logged_gbminionprice ?>)'>+ 1x Gb Minion</button>
             </div>
             <div id= 'shop_under_right' class= 'shop_row'>
                 <button class= 'item'>Em breve...</button>
@@ -94,8 +94,9 @@
     var botaoMult10price = document.getElementById("btn_10multiplier");
     var btnGbMinionprice = document.getElementById("btn_1gbminion");
 
+    //CASO O USUARIO JÁ TENHA COMPRADO MINIONS, ELE CONTINUARÁ RECEBENDO DINHEIRO
     if(user_gbminions > 0){
-        const interval_minion_give_money = setInterval(minion_give_money, 2000);
+        const interval_minion_give_money = setInterval(minion_give_money, 1000);
     }
 
     //FUNÇÕES PARA ATUALIZAR NA PÁGINA O DINHEIRO, MULTIPLICADOR E PREÇOS ATUAIS DO USUÁRIO

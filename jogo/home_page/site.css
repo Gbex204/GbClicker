@@ -99,3 +99,65 @@ body {
     height:0px; width:0px;
     visibility: hidden;
 }
+
+@media screen and (max-height: 800px) {
+    #head_logo{
+        height:100%; width: 50%;
+    }
+
+    #head_logo h1{
+        margin: 0 0 0 15px;
+        display:flex; align-content: center;
+        font-family: 'Varela Round', sans-serif;
+        font-size:200%;
+        color:aliceblue;
+    }
+
+    #info_div{
+        padding: 0 0 0 3%;
+        height:100%; width:50%;
+        display:flex; flex-direction: column; justify-content: right;
+        background-color: rgb(76, 173, 162);
+    }
+
+    .infos{
+        color:  aliceblue;
+        font-size: 75%; font-family: 'Libre Franklin', sans-serif;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    #head_logo{
+        height:100%; width: 50%;
+    }
+
+    #head_logo h1{
+        margin: 0 0 0 15px;
+        display:flex; align-content: center;
+        font-family: 'Varela Round', sans-serif;
+        font-size:200%;
+        color:aliceblue;
+    }
+
+    #info_div{
+        padding: 0 0 0 3%;
+        height:100%; width:50%;
+        display:flex; flex-direction: column; justify-content: right;
+        background-color: rgb(76, 173, 162);
+    }
+
+    .infos{
+        color:  aliceblue;
+        font-size: 75%; font-family: 'Libre Franklin', sans-serif;
+    }
+    
+    #img_div{
+        display:flex; flex-direction: column; align-items: center; justify-content: center;
+        height:100%; width:60%;
+    }
+
+    .shop_row{
+        display:flex; justify-content: center; align-items: center; flex-direction: row;
+        height:50%; width: 100%;
+    }
+}
