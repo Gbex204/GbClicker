@@ -1,12 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@100&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300&display=swap');
 
-/*
+/* 
+font-family: 'Oswald', sans-serif;
+font-family: 'Rubik', sans-serif;
 font-family: 'Libre Franklin', sans-serif;
 font-family: 'DM Sans', sans-serif;
 font-family: 'Varela Round', sans-serif;
-
 */
 
 *{
@@ -16,8 +19,10 @@ font-family: 'Varela Round', sans-serif;
 
 body {
     height:100vh; width:100vw;
-    background-color: rgb(209 210 221);
+    background-color: rgb(209 210 221)
 }
+
+/* Nav CSS */
 
 #header_div{
     height:10%; width:100%;
@@ -39,68 +44,74 @@ body {
 }
 
 #info_div{
-    padding: 0 0 0 3%;
     height:100%; width:17%;
-    display:flex; flex-direction: column; justify-content: right;
+    display:flex; flex-direction: column; justify-content: center; align-items: center;
     background-color: rgb(76, 173, 162);
 }
 
 .infos{
     color:  aliceblue;
-    font-size: 18px; font-family: 'Libre Franklin', sans-serif;
+    font-size: 4vh; font-family: 'Libre Franklin', sans-serif;
 }
 
-#outer_clicker_div {
-    display:flex; flex-direction: column; align-items: center;
-    height:60%; width:100%;
+/* Form div */
+#form_div{
+    height:90%; width:100%;
+    display:flex; flex-direction: column; justify-content: center; align-items: center;
 }
 
-#img_div{
-    display:flex; flex-direction: column; align-items: center; justify-content: center;
-    height:100%; width:20%;
+#form_div form{
+    height:60%; width:40%;
+    background-color: #f4f6ff;
+    box-shadow: rgba(115, 115, 115, 0.447) 0px 0px 3.5px 3.5px;
 }
 
-#clicker_img{
-    height:60%; width: 85%;
+#form_div form ul{
+    height:100%; width:100%;
+    display:flex; flex-direction: column; justify-content: center; align-items: center;
+    list-style:none;
 }
 
-#shop_div{
-    display:flex; justify-content: center; align-items: center; flex-direction: column;
-    height: 30%; width:100%;
-    background-color: rgb(76, 173, 162);
+#form_div form ul li{
+    height:17%; width:50%;
+    display:flex; flex-direction: column; justify-content: center; align-items: center;
+    margin: 0 0 3% 0;
 }
 
-.item{
-    outline:none; border:none;
-    height:100%; width:50%;
-    font-family: 'Libre Franklin', sans-serif; font-weight: bold;
-    margin: auto;
-    border: none; outline: none;
+#form_div form ul li input{
+    height:50%; width:100%;
+    font-size: 1.2vw; font-family: Roboto;
+}
+
+#form_div form ul li button{
+    height:50%; width:60%;
+    border: none; text-decoration: none;
+    font-size: 1.2vw; font-family: Roboto; color: #020126; font-weight: bold;
+    background-color: rgb(104, 221, 207); box-shadow: #020126 0px 2px 2px;
+    cursor: pointer;
+}
+
+/* Imagem botão */
+#change_image_input {
+    display: none;
+}
+
+#change_image_label {
+    display:flex; justify-content: center; align-items: center;
+    height: 50%; width:60%;
     background-color: rgb(84 203 189);
+    font-family: Roboto; font-size: 1.2vw; color: black;
+    font-weight: bold;
+    border: 1px solid black; border-radius: 7px;
+    cursor: pointer;
 }
 
-#shop_above{
-    display:flex; justify-content: center; align-items: center; flex-direction: row;
-    height:50%; width:100%;
-}
-
-#shop_under{
-    display:flex; justify-content: center; align-items: center; flex-direction: row;
-    height:50%; width:100%;
-}
-
-.shop_row{
-    display:flex; justify-content: center; align-items: center; flex-direction: row;
-    height:25%; width: 100%;
+#change_image_label:hover {
+    background-color: rgb(60, 176, 162);
 }
 
 
-/* USADA PARA DEIXAR DIV INVISIVEL (para mandar dados entre os php)*/
-.form_invisible{
-    height:0px; width:0px;
-    visibility: hidden;
-}
-
+/* Tentativa de responsividade */
 @media screen and (max-height: 800px) {
     #head_logo{
         display:flex; justify-content: left; align-items: center;
@@ -116,9 +127,7 @@ body {
     }
 
     #info_div{
-        padding: 0 0 0 3%;
         height:100%; width:50%;
-        display:flex; flex-direction: column; justify-content: right;
         background-color: rgb(76, 173, 162);
     }
 
@@ -128,6 +137,8 @@ body {
     }
 }
 
+
+/* Tentativa de responsividade */
 @media screen and (max-width: 800px) {
     #head_logo{
         display:flex; justify-content: left; align-items: center;
@@ -143,24 +154,12 @@ body {
     }
 
     #info_div{
-        padding: 0 0 0 3%;
         height:100%; width:50%;
-        display:flex; flex-direction: column; justify-content: right;
         background-color: rgb(76, 173, 162);
     }
 
     .infos{
         color:  aliceblue;
-        font-size: 75%; font-family: 'Libre Franklin', sans-serif;
-    }
-    
-    #img_div{
-        display:flex; flex-direction: column; align-items: center; justify-content: center;
-        height:100%; width:60%;
-    }
-
-    .shop_row{
-        display:flex; justify-content: center; align-items: center; flex-direction: row;
-        height:50%; width: 100%;
+        font-size: 100%; font-family: 'Libre Franklin', sans-serif;
     }
 }
