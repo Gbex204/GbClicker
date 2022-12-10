@@ -8,7 +8,7 @@ function comprar(user_email, user_saldo, item_nome, item_preco){
         let link = host + `/GbClicker/jogo/home_page/shop/exes/comprar_item.php?email=${user_email}&nomeitem=${item_nome}&novosaldo=${user_saldo}`;
         window.location.href = link;
     }else{
-        let link = host + `/GbClicker/jogo/home_page/shop/shop.php?erro=1`;
+        let link = host + `/GbClicker/jogo/home_page/shop/shop.php?erro=2`;
         window.location.href = link;
     }
 }

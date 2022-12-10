@@ -56,6 +56,10 @@
         botaoMult10price.innerText = `+ 10x Multiplicador (R$` + nFormatter(`${user_10multprice}`, 1) + `)`;
         btnGbMinionprice.innerText = `+ 1x Gb Minion (R$` + nFormatter(`${user_gbminionprice}`, 1) + `)`;
 
+        update_money(user_money);
+        update_multiplier(user_multiplier);
+        update_gbminions(user_gbminions);
+
         return;
     }
 

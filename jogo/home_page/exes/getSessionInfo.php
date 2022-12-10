@@ -11,10 +11,24 @@
     $result = $conn->query($sql);
     $result = $result->fetch_assoc();
 
+
+
     $logged_money = $result['user_money'];
+    $_SESSION['logged_money'] =  $logged_money;
+
     $logged_multiplier = $result['multiplier'];
+    $_SESSION['logged_multiplier'] = $logged_multiplier;
+
     $logged_1multprice = $result['multiplierPrice'];
+    $_SESSION['logged_1multprice'] = $result['multiplierPrice'];
+
     $logged_10multprice = $result['10multiplierPrice'];
+    $_SESSION['logged_10multprice'] = $result['10multiplierPrice'];
+
     $logged_gbminionprice = $result['user_gbminionprice'];
+    $_SESSION['logged_gbminionprice'] = $result['user_gbminionprice'];
+
     $logged_gbminions = $result['user_gbminions'];
+    $_SESSION['logged_gbminions'] = $result['user_gbminions'];
+    
 ?>

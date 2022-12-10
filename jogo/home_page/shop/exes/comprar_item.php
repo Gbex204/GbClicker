@@ -9,7 +9,7 @@
 
     $sqlSaveUpgrade = "INSERT INTO updates (FK_user_email, FK_item_name) VALUES ('" . $_GET['email'] . "', '" . $_GET['nomeitem'] . "')";
     $sqlSaveNewBalance = "UPDATE user SET user_money = '".$_GET['novosaldo']."' WHERE user_email = '".$_GET['email']."';";
-    
+
     if($conn->query($sqlSaveNewBalance) && $conn->query($sqlSaveUpgrade)){
         header('location: ../shop.php?comprado=true');
     }else{
