@@ -4,7 +4,7 @@
     session_start();
     //VERIFICAR SE A SESSÃO FOI INICIADA
     if(!isset($_SESSION['logged_username'])){
-        header('location: ../login_page/login.php');
+        header('location: ../../login_page/login.php');
     }
 
     $sql = "SELECT * FROM user, multiplier WHERE FK_user_email = '" . $_SESSION['logged_email'] . "' and user_email = '" . $_SESSION['logged_email'] . "'";
