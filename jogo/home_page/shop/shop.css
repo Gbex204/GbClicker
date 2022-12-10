@@ -48,7 +48,7 @@ body {
 
 .infos{
     color:  aliceblue;
-    font-size: 18px; font-family: 'Libre Franklin', sans-serif;
+    font-size: 2vh; font-family: 'Libre Franklin', sans-serif;
 }
 
 /* Loja CSS */
@@ -99,5 +99,5 @@ td:hover{
 #td_div_embaixo{
     height:20%;width:100%;
     display:flex;justify-content:center;align-items:center;
-    color:rgb(0, 0, 0); font-weight: bold; font-size:1.5vh;
+    color:rgb(0, 0, 0); font-weight: bold; font-size:1.5vh; font-family: 'Varela Round', sans-serif;
 }

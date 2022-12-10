@@ -7,10 +7,13 @@
         header('location: ../../login_page/login.php');
     }
 
-    $sql = "SELECT * FROM user, multiplier WHERE FK_user_email = '" . $_SESSION['logged_email'] . "' and user_email = '" . $_SESSION['logged_email'] . "'";
+    $logged_email = $_SESSION['logged_email'];
+
+    $sql = "SELECT * FROM user, multiplier WHERE user_email = '$logged_email' and multiplier.FK_user_email = '$logged_email'";
     $result = $conn->query($sql);
     $result = $result->fetch_assoc();
 
+    $_SESSION['logged_money'] = $result['user_money'];
     $logged_money = $result['user_money'];
     $logged_multiplier = $result['multiplier'];
     $logged_1multprice = $result['multiplierPrice'];

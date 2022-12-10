@@ -7,6 +7,11 @@
             echo "<script language='JavaScript'>alert('Não foi possível completar a compra!')</script>";
         }
     }
+    if(isset($_GET['erro'])){
+        if($_GET['erro'] == 2){
+            echo "<script language='JavaScript'>alert('Pouco dinheiro para realizar a compra!')</script>";
+        }
+    }
 ?> 
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -38,7 +43,9 @@
                 while($j < 4){
                     if($i==0){echo"<tr style='height:20%;'>"; $i+=1;}
                     while($row = $shop->fetch_assoc()){
-                        echo "<td>
+                        $item_name = $row['name'];
+                        $item_price = $row['price'];
+                        echo "<td onclick='comprar(`$logged_email`, `$logged_money`, `$item_name`, `$item_price`)'>
                                 <div id='td_div_em_cima'>
                                     <div style='height:100%;'>
                                         <img id='imagem_item' src='data:image;base64,".base64_encode($row['image'])."' alt= 'Foto do item'>
