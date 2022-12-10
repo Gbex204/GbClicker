@@ -1,4 +1,7 @@
 <?php require "exes/getSessionInfo.php" ?>
+<?php 
+    $result = $conn->query('SELECT * FROM shop');
+?> 
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -17,11 +20,11 @@
     </div>
 </div>
 <div id='form_div'>
-    <form method='POST' action='exes/create_item.php'>
+    <form method='POST' action='exes/create_item.php' enctype='multipart/form-data'>
         <ul>
             <li><input name='nome_item_input' type='text' placeholder='Nome do Item' required></li>
             <li><input name='preco_item_input' type='text' placeholder='Preço do Item' required></li>
-            <li><label id='change_image_label' for='change_image_input'>Enviar Imagem</label><input id="change_image_input" name='change_image_input' type= 'file' required></li>
+            <li><label id='change_image_label' for='change_image_input'>Enviar Imagem</label><input id="change_image_input" name='change_image_input' type='file' required></li>
             <li><button>Criar Item</button></li>
         </ul>
     </form>
