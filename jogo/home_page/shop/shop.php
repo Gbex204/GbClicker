@@ -1,6 +1,12 @@
 <?php require "exes/getSessionInfo.php" ?>
 <?php 
     $shop = $conn->query('SELECT * FROM shop');
+
+    if(isset($_GET['erro'])){
+        if($_GET['erro'] == 1){
+            echo "<script language='JavaScript'>alert('Não foi possível completar a compra!')</script>";
+        }
+    }
 ?> 
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -52,7 +58,7 @@
                 }
             ?>
         </table>
-
     <div>
+    <script src='js/script_shop.js'></script>
 </body>
 </html>
