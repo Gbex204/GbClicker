@@ -32,7 +32,16 @@
                 while($j < 4){
                     if($i==0){echo"<tr style='height:20%;'>"; $i+=1;}
                     while($row = $shop->fetch_assoc()){
-                        echo "<td style='width:20%;'>" . $row['name'] . " " . $row['price'] . "R$</td>"; $i+=1;
+                        echo "<td>
+                                <div id='td_div_em_cima'>
+                                    <div style='height:100%;'>
+                                        <img id='imagem_item' src='data:image;base64,".base64_encode($row['image'])."' alt= 'Foto do item'>
+                                    </div>
+                                </div>
+                                <div id='td_div_embaixo'>" . $row['name'] . " " . $row['price'] . "R$
+                                </div>
+                              </td>";
+                        $i+=1;
                         if($i == 5){
                             echo "</tr>";
                             $j += 1; $i = 0;
