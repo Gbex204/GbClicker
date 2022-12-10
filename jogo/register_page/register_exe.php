@@ -17,11 +17,12 @@
         //COLOCANDO NO BANCO DE DADOS O COMANDO DEFINIDO NO '$sql'
         if(mysqli_query($conn, $sqlUser) && mysqli_query($conn, $sqlMultiplier)){
             header('location: ../login_page/login.php?registrado=true');
+        }else{
+            header('location: register.php?erro=2');
         }
-
     }
     else{
-        header('location: register.php');
+        header('location: register.php?erro=1');
     }
 
     
