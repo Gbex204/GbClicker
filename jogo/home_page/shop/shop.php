@@ -1,4 +1,7 @@
 <?php require "exes/getSessionInfo.php" ?>
+<?php 
+    $shop = $conn->query('SELECT * FROM shop');
+?> 
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -20,12 +23,27 @@
     </div>
     <div id='loja_div'>
         <table>
-            <th colspan='5'>Loja</th>
-            <tr class='table_row'><td></td><td></td><td></td><td></td><td></td></tr>
-            <tr class='table_row'><td></td><td></td><td></td><td></td><td></td></tr>
-            <tr class='table_row'><td></td><td></td><td></td><td></td><td></td></tr>
-            <tr class='table_row'><td></td><td></td><td></td><td></td><td></td></tr>
+            <tr style='height:20%;'>
+                <th colspan='5'>Loja</th>
+            </tr>
+            <?php
+                $i = 0;
+                $j = 0;
+                while($j < 4){
+                    if($i==0){echo"<tr style='height:20%;'>"; $i+=1;}
+                    while($row = $shop->fetch_assoc()){
+                        echo "<td style='width:20%;'>" . $row['name'] . " " . $row['price'] . "R$</td>"; $i+=1;
+                        if($i == 5){
+                            echo "</tr>";
+                            $j += 1; $i = 0;
+                        }
+                    }
+                    while($i<6){echo"<td></td>"; $i+=1;}
+                    if($i==6){echo"</tr>"; $j+=1; $i=0;}
+                }
+            ?>
         </table>
+
     <div>
 </body>
 </html>

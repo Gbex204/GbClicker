@@ -86,8 +86,8 @@ body {
 #form_div form ul li button{
     height:50%; width:60%;
     border: none; text-decoration: none;
-    font-size: 1.2vw; font-family: Roboto; color: #020126; font-weight: bold;
-    background-color: rgb(104, 221, 207); box-shadow: #020126 0px 2px 2px;
+    font-size: 1.2vw; font-family: Roboto; color: black; font-weight: bold;
+    background-color: rgb(104, 221, 207); box-shadow: black 0px 2px 2px;
     cursor: pointer;
 }
 
