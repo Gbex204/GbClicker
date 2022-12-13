@@ -1,4 +1,4 @@
-<script type= 'text/javascript' language= 'javascript'>
+<script id='script' type= 'text/javascript' language= 'javascript'>
     //PEGANDO VALORES DO PHP E TRAZENDO PARA O JS
     var site_link = 'http://localhost'; 
 
