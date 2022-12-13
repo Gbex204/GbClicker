@@ -11,7 +11,7 @@
     $result = $conn->query($sql);
     $result = $result->fetch_assoc();
 
-
+    $logged_email = $result['user_email'];
 
     $logged_money = $result['user_money'];
     $_SESSION['logged_money'] =  $logged_money;

@@ -1,4 +1,4 @@
-<?php require "exes/getSessionInfo.php"; ?> <!-- Trazendo as informações do usuário logado para o jogo. -->
+<?php require "exes/getSessionInfo.php"; ?> <!-- Trazendo as informações e itens do usuário logado para o jogo. -->
 
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -22,8 +22,9 @@
     </div>
 
     <div id='outer_clicker_div'>
-        <div id= 'img_div'>
-            <a onclick= 'add_money()' id= 'clicker_img' style=' background: url("midia/gb.png") no-repeat scroll 0 0 transparent; cursor: pointer;'></a>
+        <div id='img_div'>
+            <img onclick= 'add_money()' id= 'clicker_img' src='midia/gb.png' style='cursor: pointer;'>
+            <?php require "exes/getItems.php"; ?>
         </div>
     </div>
 
