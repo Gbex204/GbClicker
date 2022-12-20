@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 13-Dez-2022 às 01:38
+-- Tempo de geração: 20-Dez-2022 às 04:58
 -- Versão do servidor: 10.4.24-MariaDB
 -- versão do PHP: 8.1.6
 
@@ -33,6 +33,13 @@ CREATE TABLE `multiplier` (
   `multiplierPrice` varchar(100) NOT NULL,
   `10multiplierPrice` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Extraindo dados da tabela `multiplier`
+--
+
+INSERT INTO `multiplier` (`FK_user_email`, `multiplier`, `multiplierPrice`, `10multiplierPrice`) VALUES
+('gabriel204@gmail.com', '61', '50', '7971');
 
 -- --------------------------------------------------------
 
@@ -71,6 +78,16 @@ CREATE TABLE `updates` (
   `FK_item_name` varchar(256) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Extraindo dados da tabela `updates`
+--
+
+INSERT INTO `updates` (`id`, `FK_user_email`, `FK_item_name`) VALUES
+(30, 'gabriel204@gmail.com', 'Oculos'),
+(31, 'gabriel204@gmail.com', 'Brincos'),
+(32, 'gabriel204@gmail.com', 'Bone'),
+(33, 'gabriel204@gmail.com', 'Grillz');
+
 -- --------------------------------------------------------
 
 --
@@ -85,6 +102,13 @@ CREATE TABLE `user` (
   `user_gbminions` varchar(10) NOT NULL,
   `user_gbminionprice` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Extraindo dados da tabela `user`
+--
+
+INSERT INTO `user` (`user_email`, `user_password`, `user_username`, `user_money`, `user_gbminions`, `user_gbminionprice`) VALUES
+('gabriel204@gmail.com', 'gb', 'Gb', '1005', '9', '51200');
 
 --
 -- Índices para tabelas despejadas
@@ -129,7 +153,7 @@ ALTER TABLE `shop`
 -- AUTO_INCREMENT de tabela `updates`
 --
 ALTER TABLE `updates`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
 
 --
 -- Restrições para despejos de tabelas
