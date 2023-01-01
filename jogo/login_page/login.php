@@ -6,7 +6,7 @@
     <title>GbClicker | Logar</title>
 </head>
 <body>
-    <div id= 'container'>
+    <div id='container'>
         <div id= 'login_logo'>
             <h1 id= 'login_logo_h1'>GB CLICKER</h1>
         </div>
@@ -19,8 +19,11 @@
                 <label>Senha:</label>
                 <input name= 'login_input_password' type='password' placeholder= 'Digite aqui sua senha...'>
             </section>
-            <section class= 'login_button_section'>
+            <section class= 'login_form_section'>
                 <input id= 'btnLogin' type= 'submit' value='Logar'>
+            </section>
+            <section class= 'login_form_section'>
+                <h3 id='register_h3'>Ainda não possui conta? <a id='register_a' href='../register_page/register.php'>Registre-se aqui</a></h3>
             </section>
         </form>
     </div>
